@@ -1,0 +1,30 @@
+CREATE TABLE receitas (
+    id_receitas INT PRIMARY KEY AUTO_INCREMENT,
+    id_usuario int DEFAULT NULL,
+    nome VARCHAR(254),
+    valor NUMERIC,
+    data DATE,
+    KEY id_usuario (id_usuario),
+    CONSTRAINT receitas FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario)
+);
+
+
+CREATE TABLE despesas (
+    id_despesas INT PRIMARY KEY AUTO_INCREMENT,
+    id_usuario int DEFAULT NULL,
+    nome VARCHAR(254),
+    valor NUMERIC,
+    data DATE,
+    KEY id_usuario (id_usuario),
+    CONSTRAINT despesas FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario)
+);
+
+CREATE TABLE guardar (
+    id_guardar INT PRIMARY KEY,
+    id_usuario int DEFAULT NULL,
+    nome VARCHAR(254),
+    valor NUMERIC,
+    data DATE,
+    KEY id_usuario (id_usuario),
+    CONSTRAINT guardar FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario)
+);
